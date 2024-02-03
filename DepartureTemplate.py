@@ -1,5 +1,5 @@
 class departure:
-    def __init__(self,info=""):
+    def __init__(self,info="",stations=[]):
 
         destination = ""
         platform = None
