@@ -13,5 +13,6 @@ def index():
 
 @app.route("/<requestedStation>")
 def displayDepartures(requestedStation):
-    return render_template("index.html",a_variable = requestedStation)
+    d = retrieveDepartures.query(requestedStation)
+    return render_template("index.html",a_variable = d[0].getDestination())
     
