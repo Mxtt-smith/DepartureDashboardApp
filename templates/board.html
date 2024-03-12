@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Welcome to {{StationTitle}}</title>
     <div class="options">
         <form id="optionsForm" action = "http://localhost:5000/index" method="GET">
             <label for="back">Options:</label><br>
-            <button id="back" type="submit"></button>
-            <button id="search" type="submit"></button>
+            <button class="stdButton" type="submit">Refresh</button>
+            <button class="stdButton" type="submit">Back</button>
         </form>
     </div>
     <div class="board">

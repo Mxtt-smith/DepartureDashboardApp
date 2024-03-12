@@ -1,0 +1,8 @@
+.options{
+    text-align: center;
+    font-size: large;
+}
+.options .stdButton{
+    width: 60px;
+    height: 20px;
+}

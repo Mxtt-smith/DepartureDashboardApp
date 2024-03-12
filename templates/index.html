@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Dashboard</title>
     <h1>Departure Board</h1>
 </head>
@@ -10,7 +11,7 @@
     <form id="stationSelector" action = "http://localhost:5000/board" method = "POST">
         <label for="stationBox">Station:</label><br>
         <input type="text" id="stationBox" name="stationBox" value="KGX"><br>
-        <button id="search" type="submit">Search</button>
+        <button class="stdButton" type="submit">Search</button>
     </form>
 </body>
 </html>
