@@ -1,25 +1,26 @@
 class departure:
-    def __init__(self,info="",stations=[]):
+    def __init__(self,info="",stns=[]):
 
-        destination = ""
-        platform = None
-        expectedArrival = ""
-        scheduledArrival = ""
-        stations = []
+        self.destination = ""
+        self.platform = None
+        self.expectedArrival = ""
+        self.scheduledArrival = ""
+        self.stations = []
 
         if info == "":
-            destination,platform,expectedArrival,scheduledArrival = "---"
+            self.destination,self.platform,self.expectedArrival,self.scheduledDeparture = "---"
         else:
-            destination,platform,expectedArrival,scheduledArrival = info.split(',')
-            stations
-        if platform == None:
-            platform = 'Na'
+            self.destination,self.platform,self.expectedArrival,self.scheduledDeparture = info.split(',')
+            self.stations = stns
+        if self.platform == None:
+            self.platform = 'Na'
 
     def getEta(self):
-        if self.expectedArrival <= self.scheduledArrival:
-            return "On time"
+        if self.expectedArrival == 'On time':
+            return self.expectedArrival
+        if self.expectedArrival == 'None':
+            return " --- "
         return "Exp " + self.expectedArrival
-    
     def getDestination(self):
         return self.destination
     
@@ -27,15 +28,17 @@ class departure:
         return self.platform
     
     def getCallingAt(self):
-        callingAt= "Calling at:"
+        callingAt= "Calling at: "
 
         if not self.stations:
             callingAt = callingAt + self.getDestination() + " only"
             return callingAt
         for i in range(len(self.stations)-1):
-            callingAt = callingAt + self.stations[i] + ","
+            callingAt = callingAt + self.stations[i].location_name + ","
         return callingAt
 
+    def getShedDeparture(self):
+        return self.scheduledDeparture
     
 
     

@@ -3,18 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="\templates\main.css">
     <title>Dashboard</title>
-    <h1>My Webpage</h1>
-    {{ a_variable }}
+    <h1>Departure Board</h1>
 </head>
 <body>
-    <h1>Departure board</h1>
-    <div class="departureBox">
-        <button id="search">Search</button>
-        <input id="searchBox">
-    </div>
-   
-  </div>
+    <form id="stationSelector" action = "http://localhost:5000/board" method = "POST">
+        <label for="stationBox">Station:</label><br>
+        <input type="text" id="stationBox" name="stationBox" value="KGX"><br>
+        <button id="search" type="submit">Search</button>
+    </form>
 </body>
 </html>

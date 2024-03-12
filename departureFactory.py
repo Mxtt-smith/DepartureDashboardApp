@@ -10,7 +10,10 @@ class getDepartures:
         self.station = stn #Will be changed so user can use the actual name of the station
         if self.station == "":
             return [departure("ErrorStationNotFound,--,--,--",[])]
-        board = self.darwin.get_station_board(self.station)
+        try:
+            board = self.darwin.get_station_board(self.station)
+        except:
+           return [departure("ErrorStationNotFound,--,--,--",[])]
 
         if len(board.train_services) == 0:
             return [departure(f'welcome to {self.station},---,---,---',[])]
@@ -25,8 +28,11 @@ class getDepartures:
             info += str(board.train_services[i].destination_text) + ","
             info += str(service.platform) + ","
             info += str(service.eta) + ","
+            #info += str(service.eta) + ","
             info += str(service.std)
             callingPoints = service.subsequent_calling_points
+
+            service.std
 
             departures.append(departure(info,callingPoints))
         
