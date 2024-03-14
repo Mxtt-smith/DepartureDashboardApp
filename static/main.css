@@ -19,4 +19,8 @@
 }
 .selectorForm{
     text-align: center;
+    margin: 5px;
+}
+.selectorForm .stdLabel{
+    padding: 20px;
 }
