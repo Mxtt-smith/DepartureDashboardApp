@@ -15,7 +15,7 @@
     <div class="board">
         {%for t in departures%}
         <div class="departure">
-        Next train to depart is the {{t.getShedDeparture()}}to {{t.getDestination()}} calling at {{t.getCallingAt()}}  {{t.getEta()}} <br><br>
+        Next train to depart is the {{t.getShedDeparture()}} to {{t.getDestination()}}  {{t.getCallingAt()}}  {{t.getEta()}} <br><br>
         </div>
         {%endfor%}
     </div>
