@@ -1,3 +1,6 @@
+*{
+    font-family: monospace;
+}
 .options{
     text-align: center;
     font-size: large;

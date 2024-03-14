@@ -24,5 +24,4 @@ def result():
         json_result = dict(result)
         print(json_result)
         requestedStation = json_result.get("stationBox")
-        requestedStationsDepartures = retrieveDepartures.query(requestedStation.upper())
-        return render_template("board.html",departures = requestedStationsDepartures)
+        return redirect(f'/{requestedStation}')
