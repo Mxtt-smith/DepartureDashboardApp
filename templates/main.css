@@ -6,3 +6,14 @@
     width: 60px;
     height: 20px;
 }
+.board{
+    background-color: orange;
+    border-color: brown;
+}
+.departure{
+    border-color: brown;
+    box-sizing: border-box;
+}
+.selectorForm{
+    text-align: center;
+}
