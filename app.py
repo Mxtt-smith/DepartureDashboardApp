@@ -1,10 +1,11 @@
-from flask import Flask, render_template, redirect,request
+from flask import Flask, render_template, redirect,request, session
 from departureTemplate import departure #Custom departure object
 from departureFactory import getDepartures
 
 #Command to run the app is: python -m flask --app app run
 #Activating virtual environment departureDash\scripts\activate
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "any random string"
 retrieveDepartures = getDepartures()
 #app.jinja_env.globals.update(search=search)
 
@@ -24,4 +25,14 @@ def result():
         json_result = dict(result)
         print(json_result)
         requestedStation = json_result.get("stationBox")
+        session["currentStation"] = requestedStation
         return redirect(f'/{requestedStation}')
+@app.route('/handleOptions',methods=['POST'])
+def handle_options():
+    if request.method == 'POST':
+        result = request.form
+        json_result = dict(result)
+        if result.get("opButton") == "back":
+            return redirect("/")
+        else:
+            return redirect(f'/{session["currentStation"]}')
