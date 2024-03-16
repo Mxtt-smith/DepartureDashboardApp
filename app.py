@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect,request, session
 from departureTemplate import departure #Custom departure object
 from departureFactory import getDepartures
+from markupsafe import escape 
 
 #Command to run the app is: python -m flask --app app run
 #Activating virtual environment departureDash\scripts\activate
@@ -24,7 +25,7 @@ def result():
         result = request.form
         json_result = dict(result)
         print(json_result)
-        requestedStation = json_result.get("stationBox")
+        requestedStation = escape(json_result.get("stationBox"))
         session["currentStation"] = requestedStation
         return redirect(f'/{requestedStation}')
 @app.route('/handleOptions',methods=['POST'])
@@ -36,3 +37,6 @@ def handle_options():
             return redirect("/")
         else:
             return redirect(f'/{session["currentStation"]}')
+@app.errorhandler(404)
+def page_not_found(error):
+    return redirect('/XXX')

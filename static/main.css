@@ -16,6 +16,7 @@
 .departure{
     border-color: brown;
     box-sizing: border-box;
+    text-align: center;
 }
 .selectorForm{
     text-align: center;
@@ -23,4 +24,9 @@
 }
 .selectorForm .stdLabel{
     padding: 20px;
+}
+.departure .error{
+    border-color: brown;
+    box-sizing: border-box;
+    text-align: center;
 }

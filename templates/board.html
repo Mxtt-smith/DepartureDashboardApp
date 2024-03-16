@@ -15,8 +15,12 @@
     <div class="board">
         {%for t in departures%}
         <div class="departure">
-        Next train to depart is the {{t.getShedDeparture()}} to {{t.getDestination()}}  {{t.getCallingAt()}}  {{t.getEta()}} <br><br>
-        </div>
+            {%if t.getDestination() == "ErrorStationNotFound"%}
+                <div class="error">Please enter a valid station name or station code</div>
+            {%else%}
+                Next train to depart is the {{t.getShedDeparture()}} to {{t.getDestination()}}  {{t.getCallingAt()}}  {{t.getEta()}} <br><br>
+            {%endif%}
+            </div>
         {%endfor%}
     </div>
 </head>
