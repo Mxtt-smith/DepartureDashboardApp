@@ -14,7 +14,7 @@
     </div>
     <div class="board">
         {%for t in departures%}
-        <div class="departure">
+        <div class="departure" id="{t.getColour()}">
             {%if t.getDestination() == "ErrorStationNotFound"%}
                 <div class="error">Please enter a valid station name or station code</div>
             {%else%}

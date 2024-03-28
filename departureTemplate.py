@@ -1,4 +1,5 @@
 class departure:
+
     def __init__(self,info="",stns=[]):
 
         self.destination = ""
@@ -6,6 +7,7 @@ class departure:
         self.expectedArrival = ""
         self.scheduledArrival = ""
         self.stations = []
+        self.colour = "pink"
 
         if info == "":
             self.destination,self.platform,self.expectedArrival,self.scheduledDeparture = "---"
@@ -17,9 +19,12 @@ class departure:
 
     def getEta(self):
         if self.expectedArrival == 'On time':
+            self.colour = "green"
             return self.expectedArrival
         if self.expectedArrival == 'None':
+            self.colour = "yellow"
             return " --- "
+        self.colour = "red"
         return "Exp " + self.expectedArrival
     def getDestination(self):
         return self.destination
@@ -39,6 +44,8 @@ class departure:
 
     def getShedDeparture(self):
         return self.scheduledDeparture
-    
+    def getColour(self):
+        Useless = self.getEta()
+        return self.colour
 
     
