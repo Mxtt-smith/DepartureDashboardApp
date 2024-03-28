@@ -1,10 +1,15 @@
 from departureTemplate import departure
 from nredarwin.webservice import DarwinLdbSession
+import os
+from dotenv import find_dotenv, load_dotenv
+
+envPath = find_dotenv()
+load_dotenv(envPath)
 #This file has one function: To return a list of departure objects reflecting the current services
 
 class getDepartures:
     def __init__(self):
-        self.darwin = DarwinLdbSession(wsdl="https://lite.realtime.nationalrail.co.uk/OpenLDBWS/wsdl.aspx", api_key="89ca18ad-9591-4384-a634-472c772763b2")
+        self.darwin = DarwinLdbSession(wsdl="https://lite.realtime.nationalrail.co.uk/OpenLDBWS/wsdl.aspx", api_key=os.getenv("API_KEY"))
 
     def query(self,stn=""):
         self.station = stn #Will be changed so user can use the actual name of the station
