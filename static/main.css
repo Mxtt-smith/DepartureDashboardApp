@@ -25,7 +25,7 @@
     padding: 20px;
 }
 .departure .error{
-    border-color: brown;
+    border-color: red;
     box-sizing: border-box;
     text-align: center;
 }
