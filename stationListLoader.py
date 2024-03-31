@@ -20,7 +20,7 @@ for i in range(26):
             count = count + 1
             print(count)
 count = 0
-for c in codeList[9801:14701]:
+for c in codeList[14701:]:
     count = count + 1
     print(count)
     try:
@@ -29,7 +29,7 @@ for c in codeList[9801:14701]:
         continue
     stationDict.update({c: str(board.location_name.upper())})
 
-with open('stationConversions9801-14700.txt', 'w') as convert_file: 
+with open('stationConversions14701-end.txt', 'w') as convert_file: 
     convert_file.write(json.dumps(stationDict))
 print(len(stationDict))
 
