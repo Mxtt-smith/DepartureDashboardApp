@@ -21,13 +21,13 @@ for i in range(26):
             print(count)
 count = 0
 for c in codeList[4901:9801]:
+    count = count + 1
+    print(count)
     try:
         board = darwin_sesh.get_station_board(c)
     except:
         continue
     stationDict.update({c: str(board.location_name.upper())})
-    count = count + 1
-    print(count)
 
 with open('stationConversions4901-9800.txt', 'w') as convert_file: 
     convert_file.write(json.dumps(stationDict))
