@@ -12,8 +12,8 @@ class getDepartures:
     stnConversions = {}
     def __init__(self):
         self.darwin = DarwinLdbSession(wsdl="https://lite.realtime.nationalrail.co.uk/OpenLDBWS/wsdl.aspx", api_key=os.getenv("API_KEY"))
-        f = open('stationConversions1-4900.txt')
-        stnConversions = json.load(f)
+        f = open('stationConversionsAPR24.txt')
+        self.stnConversions = json.load(f)
         f.close()
 
     def query(self,stn=""):
