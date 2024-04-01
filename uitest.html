@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type= "text/css" href="uitest.css">
+    <title>Test</title>
+</head>
+<body>
+    <div class="baseBoard">
+        <div class="sheduledArrival">
+            00:00
+        </div>
+    </div>
+    <div class="baseBoard">
+        <div class="sheduledArrival">
+            00:00
+        </div>
+        <div class="destination">
+            Darlington
+        </div>
+    </div>
+    <div class="baseBoard">
+        <div class="sheduledArrival">
+            00:00
+        </div>
+    </div>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        .baseBoard{
+            position:relative;
+            top: 40px;
+            font-size: x-large;
+            border: salmon;
+            padding: 20px;
+            margin: 10px;
+            background-color: pink;
+            height: 30px;
+        }
+        .baseBoard .sheduledArrival{
+            position: absolute;
+            top: 25px;
+            height: 20px;
+            left: 10px;
+            background-color: grey;
+            z-index: 100;
+
+        }
+        .baseBoard .destination{
+            position: absolute;
+            top: 5px;
+            height: 25px;
+            left: 75px;
+            min-width: 70%;
+            background-color: grey;
+            z-index: 100;
+            text-align: center;
+        }
+    </style>
+</body>
+</html>
