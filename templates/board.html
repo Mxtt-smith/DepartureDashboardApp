@@ -12,19 +12,33 @@
             <button class="stdButton"  type="submit" value="back" name="opButton">Back</button>
         </form>
     </div>
+</head>
+<body>
     <div class="board">
         {%for t in departures%}
-        <div class="departure" id="{t.getColour()}">
             {%if t.getDestination() == "ErrorStationNotFound"%}
                 <div class="error">Please enter a valid station name or station code</div>
             {%else%}
-                Next train to depart is the {{t.getShedDeparture()}} to {{t.getDestination()}}  {{t.getCallingAt()}}  {{t.getEta()}} <br><br>
+            <div class="baseBoard">
+                <div class="scheduledArrival">
+                    {{t.getShedDeparture()}}
+                </div>
+                <div class="destination">
+                    {{t.getDestination()}} 
+                </div>
+                <div class="platform">
+                    1
+                </div>
+                <div class="expected">
+                    {{t.getEta()}}
+                </div>
+                <div class="callingAt">
+                    {{t.getCallingAt()}}
+                </div>
+            </div>
             {%endif%}
             </div>
         {%endfor%}
     </div>
-</head>
-<body>
-    
 </body>
 </html>
