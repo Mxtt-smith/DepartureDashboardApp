@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type= "text/css" href="uitest.css">
+    <title>Test</title>
+</head>
+<body>
+    <div class="baseBoard">
+        <div class="scheduledArrival">
+            00:00
+        </div>
+        <div class="destination">
+            Darlington
+        </div>
+        <div class="platform">
+            1
+        </div>
+        <div class="expected">
+            Exp 00:00
+        </div>
+        <div class="callingAt">
+            Calling at: Durham, Newcastle
+        </div>
+    </div>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        .baseBoard{
+            position:relative;
+            top: 40px;
+            font-size: x-large;
+            border: salmon;
+            padding: 20px;
+            margin: 10px;
+            background-color: black;
+            height: 30px;
+        }
+        .baseBoard .scheduledArrival{
+            position: absolute;
+            top: 25px;
+            height: 20px;
+            left: 1%;
+            background-color: grey;
+            z-index: 100;
+            color:rgb(247, 167, 18)
+
+        }
+        .baseBoard .destination{
+            position: absolute;
+            top: 5px;
+            height: 25px;
+            left: 75px;
+            min-width: 63%;
+            background-color: grey;
+            z-index: 100;
+            text-align: center;
+            color:rgb(247, 167, 18)
+        }
+        .baseBoard .platform{
+            position:absolute;
+            top: 10px;
+            height: 20px;
+            right: 10%;
+            background-color: grey;
+            z-index: 100;
+            color:rgb(247, 167, 18)
+        }
+        .baseBoard .expected{
+            position: absolute;
+            top: 40px;
+            height: 20px;
+            right: 1%;
+            width: 109px;
+            background-color: grey;
+            z-index: 100;
+            color:rgb(247, 167, 18);
+            bottom: 10px;
+            min-width: 109px;
+            max-width: 109px;
+        }
+        .baseBoard .callingAt{
+            position: absolute;
+            bottom: 5px;
+            height: 25px;
+            left: 75px;
+            min-width: 63%;
+            background-color: grey;
+            z-index: 100;
+            text-align: center;
+            color:rgb(247, 167, 18)
+        }
+        
+    </style>
+</body>
+</html>
