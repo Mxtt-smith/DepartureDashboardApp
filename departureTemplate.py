@@ -12,7 +12,7 @@ class departure:
         if info == "":
             self.destination,self.platform,self.expectedArrival,self.scheduledDeparture = "---"
         else:
-            self.destination,self.platform,self.expectedArrival,self.scheduledDeparture = info.split(',')
+            self.destination,self.platform,self.expectedArrival,self.scheduledDeparture = info.split('|')
             self.stations = stns
         if self.platform == None:
             self.platform = 'Na'

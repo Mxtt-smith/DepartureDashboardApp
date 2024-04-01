@@ -33,14 +33,14 @@ class getDepartures:
             service = self.darwin.get_service_details(service_id)
 
             info = ""
-            info += str(board.train_services[i].destination_text) + ","
-            info += str(service.platform) + ","
-            info += str(service.eta) + ","
+            info += str(board.train_services[i].destination_text) + "|"
+            info += str(service.platform) + "|"
+            info += str(service.eta) + "|"
             #info += str(service.eta) + ","
             info += str(service.std)
             callingPoints = service.subsequent_calling_points
 
-            service.std
+            print(info)
 
             departures.append(departure(info,callingPoints))
         
