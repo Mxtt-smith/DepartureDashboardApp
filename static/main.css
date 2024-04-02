@@ -81,7 +81,7 @@
     min-width: 63%;
     background-color: grey;
     z-index: 100;
-    text-align: center;
+    text-align: left;
     color:rgb(247, 167, 18)
 }
 .baseBoard .platform{
@@ -112,8 +112,10 @@
     height: 25px;
     left: 75px;
     min-width: 63%;
+    max-width: 63%;
     background-color: grey;
     z-index: 100;
-    text-align: center;
-    color:rgb(247, 167, 18)
+    text-align: left;
+    color:rgb(247, 167, 18);
+    overflow: hidden;
 }

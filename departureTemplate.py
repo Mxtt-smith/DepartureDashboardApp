@@ -25,6 +25,8 @@ class departure:
             self.colour = "yellow"
             return " --- "
         self.colour = "red"
+        if self.expectedArrival == 'Cancelled':
+            return "Cancelled"
         return "Exp " + self.expectedArrival
     def getDestination(self):
         return self.destination
@@ -35,12 +37,12 @@ class departure:
     def getCallingAt(self):
         callingAt= "Calling at: "
 
-        if not self.stations:
+        if len(self.stations) == 1:
             callingAt = callingAt + self.getDestination() + " only"
             return callingAt
         for i in range(len(self.stations)-1):
             callingAt = callingAt + self.stations[i].location_name + ","
-        return callingAt
+        return callingAt + self.getDestination()
 
     def getShedDeparture(self):
         return self.scheduledDeparture
