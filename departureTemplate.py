@@ -42,7 +42,7 @@ class departure:
             return callingAt
         for i in range(len(self.stations)-1):
             callingAt = callingAt + self.stations[i].location_name + ","
-        return callingAt + self.getDestination()
+        return callingAt + self.getDestination() + "      "
 
     def getShedDeparture(self):
         return self.scheduledDeparture

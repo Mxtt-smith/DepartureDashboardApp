@@ -111,8 +111,7 @@
     bottom: 5px;
     height: 25px;
     left: 75px;
-    min-width: 75%;
-    max-width: 75%;
+    width : 75%;
     background-color: grey;
     z-index: 100;
     text-align: left;
@@ -120,10 +119,11 @@
     overflow: hidden;
 }
 .scrollingText {
+    overflow: hidden;
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    animation: marquee 10s linear infinite;
+    animation: marquee 12s linear infinite;
   }
   
   @keyframes marquee {
