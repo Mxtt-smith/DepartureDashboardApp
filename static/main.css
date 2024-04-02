@@ -111,11 +111,26 @@
     bottom: 5px;
     height: 25px;
     left: 75px;
-    min-width: 63%;
-    max-width: 63%;
+    min-width: 75%;
+    max-width: 75%;
     background-color: grey;
     z-index: 100;
     text-align: left;
     color:rgb(247, 167, 18);
     overflow: hidden;
 }
+.scrollingText {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: marquee 10s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
