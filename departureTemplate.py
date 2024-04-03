@@ -19,11 +19,9 @@ class departure:
 
     def getEta(self):
         if self.expectedArrival == 'On time':
-            self.colour = "green"
             return self.expectedArrival
         if self.expectedArrival == 'None':
-            self.colour = "yellow"
-            return " --- "
+            return "On time"
         self.colour = "red"
         if self.expectedArrival == 'Cancelled':
             return "Cancelled"
@@ -35,7 +33,7 @@ class departure:
         return self.platform
     
     def getCallingAt(self):
-        callingAt= "Calling at: "
+        callingAt=""
 
         if len(self.stations) == 1:
             callingAt = callingAt + self.getDestination() + " only"
@@ -46,8 +44,4 @@ class departure:
 
     def getShedDeparture(self):
         return self.scheduledDeparture
-    def getColour(self):
-        Useless = self.getEta()
-        return self.colour
-
     

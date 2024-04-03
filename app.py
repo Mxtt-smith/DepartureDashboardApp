@@ -3,7 +3,7 @@ from departureTemplate import departure #Custom departure object
 from departureFactory import getDepartures
 from markupsafe import escape 
 
-#Command to run the app is: python -m flask --app app run
+#Command to run the app is: python -m flask --app app --debug run
 #Activating virtual environment departureDash\scripts\activate
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "any random string"

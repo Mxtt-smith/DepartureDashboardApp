@@ -1,36 +1,41 @@
-*{
-    font-family: monospace;
-}
-.options{
-    text-align: center;
-    font-size: large;
-}
-.options .stdButton{
-    width: 60px;
-    height: 20px;
-}
-.selectorForm{
-    text-align: center;
-    margin: 5px;
-}
-.selectorForm .stdLabel{
-    padding: 20px;
-}
-.error{
-    border-color: red;
-    box-sizing: border-box;
-    text-align: center;
-}
-.baseBoard{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type= "text/css" href="uitest.css">
+    <title>Test</title>
+</head>
+<body>
+    <div class="baseBoard">
+        <div class="scheduledArrival">
+            00:00
+        </div>
+        <div class="destination">
+            Darlington
+        </div>
+        <div class="platform">
+            1
+        </div>
+        <div class="expected">
+            Exp 00:00
+        </div>
+        <div class="callingAt">
+            Calling at: Durham, Newcastle
+        </div>
+    </div>
+    <style>
+        *{
+            font-family: monospace;
+            .baseBoard{
     position:relative;
     top: 40px;
     font-size: x-large;
+    border: salmon;
     padding: 20px;
     margin: 10px;
-    width: 40%;
     background-color: black;
     height: 30px;
-    left: 30%;
 }
 .baseBoard .scheduledArrival{
     position: absolute;
@@ -47,7 +52,7 @@
     top: 5px;
     height: 25px;
     left: 75px;
-    width: 510px;
+    min-width: 63%;
     background-color: grey;
     z-index: 100;
     text-align: left;
@@ -80,29 +85,19 @@
     bottom: 5px;
     height: 25px;
     left: 75px;
-    width : 510px;
+    width : 75%;
     background-color: grey;
     z-index: 100;
     text-align: left;
     color:rgb(247, 167, 18);
     overflow: hidden;
 }
-.textContainer{
-    position: absolute;
-    bottom: 5px;
-    height: 25px;
-    left: 200px;
-    width : 360px;
-    z-index: 100;
-    text-align: left;
-    color:rgb(247, 167, 18);
-    overflow: hidden;
-}
-.scrollingText {
+.callingAt .scrollingText {
     overflow: hidden;
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
+    width:75%;
     animation: marquee 12s linear infinite;
   }
   
@@ -114,3 +109,7 @@
       transform: translate3d(-50%, 0, 0);
     }
   }
+}       
+    </style>
+</body>
+</html>
