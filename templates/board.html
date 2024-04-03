@@ -27,7 +27,7 @@
                     {{t.getDestination()}} 
                 </div>
                 <div class="platform">
-                    1
+                    {{t.getPlatform()}}
                 </div>
                 <div class="expected">
                     {{t.getEta()}}
@@ -35,8 +35,10 @@
                 <div class="callingAt">
                     Calling at:
                 </div>
-                <div class="scrollingText">
-                    {{t.getCallingAt()}}
+                <div class="textContainer">
+                    <div class="scrollingText">
+                        {{t.getCallingAt()}}
+                    </div>
                 </div>
             </div>
             {%endif%}

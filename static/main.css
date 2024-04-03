@@ -56,10 +56,10 @@
     font-size: x-large;
     padding: 20px;
     margin: 10px;
-    width: 50%;
+    width: 40%;
     background-color: black;
     height: 30px;
-    left: 25%;
+    left: 30%;
 }
 .baseBoard .scheduledArrival{
     position: absolute;
@@ -76,7 +76,7 @@
     top: 5px;
     height: 25px;
     left: 75px;
-    min-width: 63%;
+    width: 500px;
     background-color: grey;
     z-index: 100;
     text-align: left;
@@ -109,8 +109,19 @@
     bottom: 5px;
     height: 25px;
     left: 75px;
-    width : 400px;
+    width : 500px;
     background-color: grey;
+    z-index: 100;
+    text-align: left;
+    color:rgb(247, 167, 18);
+    overflow: hidden;
+}
+.textContainer{
+    position: absolute;
+    bottom: 5px;
+    height: 25px;
+    left: 200px;
+    width : 350px;
     z-index: 100;
     text-align: left;
     color:rgb(247, 167, 18);
@@ -121,17 +132,7 @@
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    width:75%;
     animation: marquee 12s linear infinite;
-    position: absolute;
-    bottom: 5px;
-    height: 25px;
-    left: 300px;
-    width : 200px;
-    z-index: 100;
-    text-align: left;
-    color:rgb(247, 167, 18);
-    overflow: hidden;
   }
   
   @keyframes marquee {

@@ -19,7 +19,6 @@ class departure:
 
     def getEta(self):
         if self.expectedArrival == 'On time':
-            self.colour = "green"
             return self.expectedArrival
         if self.expectedArrival == 'None':
             self.colour = "yellow"
