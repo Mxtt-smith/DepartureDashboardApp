@@ -30,6 +30,8 @@ class departure:
         return self.destination
     
     def getPlatform(self):
+        if self.platform == 'None':
+            return "-"
         return self.platform
     
     def getCallingAt(self):
