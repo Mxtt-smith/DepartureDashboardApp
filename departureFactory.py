@@ -45,7 +45,7 @@ class getDepartures:
         
         return departures
     def getStation(self):
-        return self.station #No use for this yet
+        return self.station
     
     def convertStation(self,stn):
         if stn in self.stnConversions.keys():

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='main.css') }}">
-    <title>Welcome to {{StationTitle}}</title>
+    <title>Welcome to {{stationTitle}}</title>
     <div class="options">
         <form id="optionsForm" action="{{ url_for('handle_options') }}" method="POST">
             <label for="back">Options:</label><br>
@@ -44,6 +44,10 @@
             {%endif%}
             </div>
         {%endfor%}
+        <div class="logoImage">
+            <img src="static\NRE_Powered_logo.png" alt="Powered by National Rail Enquiries" >
+        </div>
+        
     </div>
 </body>
 </html>

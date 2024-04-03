@@ -114,3 +114,7 @@
       transform: translate3d(-50%, 0, 0);
     }
   }
+.logoImage{
+    text-align: center;
+    padding: 50px;
+}
