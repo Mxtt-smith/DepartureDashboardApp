@@ -35,7 +35,7 @@ class departure:
         return self.platform
     
     def getCallingAt(self):
-        callingAt= "Calling at: "
+        callingAt=""
 
         if len(self.stations) == 1:
             callingAt = callingAt + self.getDestination() + " only"
