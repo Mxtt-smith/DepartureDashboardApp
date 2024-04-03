@@ -40,7 +40,3 @@ def handle_options():
 @app.errorhandler(404)
 def page_not_found(error):
     return redirect('/XXX')
-
-@app.route("/test")
-def test():
-    return render_template("uitest.html",a_variable = "No station selected")

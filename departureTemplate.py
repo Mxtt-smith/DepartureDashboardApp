@@ -21,8 +21,7 @@ class departure:
         if self.expectedArrival == 'On time':
             return self.expectedArrival
         if self.expectedArrival == 'None':
-            self.colour = "yellow"
-            return " --- "
+            return "On time"
         self.colour = "red"
         if self.expectedArrival == 'Cancelled':
             return "Cancelled"
@@ -45,8 +44,4 @@ class departure:
 
     def getShedDeparture(self):
         return self.scheduledDeparture
-    def getColour(self):
-        Useless = self.getEta()
-        return self.colour
-
     

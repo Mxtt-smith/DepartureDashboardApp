@@ -9,11 +9,6 @@
     width: 60px;
     height: 20px;
 }
-.departure{
-    border-color: brown;
-    box-sizing: border-box;
-    text-align: center;
-}
 .selectorForm{
     text-align: center;
     margin: 5px;
@@ -21,32 +16,8 @@
 .selectorForm .stdLabel{
     padding: 20px;
 }
-.departure .error{
+.error{
     border-color: red;
-    box-sizing: border-box;
-    text-align: center;
-}
-.departure #pink{
-    border-color: brown;
-    fill: pink;
-    box-sizing: border-box;
-    text-align: center;
-}
-.departure #red{
-    border-color: brown;
-    fill: red;
-    box-sizing: border-box;
-    text-align: center;
-}
-.departure #yellow{
-    border-color: brown;
-    fill: yellow;
-    box-sizing: border-box;
-    text-align: center;
-}
-.departure #green{
-    border-color: brown;
-    fill: pink;
     box-sizing: border-box;
     text-align: center;
 }
@@ -76,7 +47,7 @@
     top: 5px;
     height: 25px;
     left: 75px;
-    width: 500px;
+    width: 510px;
     background-color: grey;
     z-index: 100;
     text-align: left;
@@ -109,7 +80,7 @@
     bottom: 5px;
     height: 25px;
     left: 75px;
-    width : 500px;
+    width : 510px;
     background-color: grey;
     z-index: 100;
     text-align: left;
@@ -121,7 +92,7 @@
     bottom: 5px;
     height: 25px;
     left: 200px;
-    width : 350px;
+    width : 360px;
     z-index: 100;
     text-align: left;
     color:rgb(247, 167, 18);
