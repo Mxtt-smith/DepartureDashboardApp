@@ -19,28 +19,42 @@
             {%if t.getDestination() == "ErrorStationNotFound"%}
                 <div class="error">Please enter a valid station name or station code</div>
             {%else%}
-            <div class="baseBoard">
-                <div class="scheduledArrival">
-                    {{t.getShedDeparture()}}
-                </div>
-                <div class="destination">
-                    {{t.getDestination()}} 
-                </div>
-                <div class="platform">
-                    {{t.getPlatform()}}
-                </div>
-                <div class="expected">
-                    {{t.getEta()}}
-                </div>
-                <div class="callingAt">
-                    Calling at:
-                </div>
-                <div class="textContainer">
-                    <div class="scrollingText">
-                        {{t.getCallingAt()}}
+                <div class="baseBoard">
+                    <div class="scheduledArrival">
+                        {{t.getShedDeparture()}}
                     </div>
+                    <div class="destination">
+                        {{t.getDestination()}} 
+                    </div>
+                    <div class="platform">
+                        {{t.getPlatform()}}
+                    </div>
+                    <div class="expected">
+                        {{t.getEta()}}
+                    </div>
+                    <div class="callingAt">
+                        Calling at:
+                    </div>
+                    <!-- <div class="textContainer">
+                        <div class="scrollingText">
+                            {{t.getCallingAt()}}
+                        </div>
+                    </div> -->
+                    {% if length(t.getCallingAt()) <= 50 %}
+                        <div class="callingAt">
+                            Calling at: {{t.getCallingAt()}}
+                        </div>
+                    {% else%}
+                        <div class="callingAt">
+                            Calling at:
+                        </div>
+                        <div class="textContainer">
+                            <div class="scrollingText">
+                                {{t.getCallingAt()}}
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
-            </div>
             {%endif%}
             </div>
         {%endfor%}

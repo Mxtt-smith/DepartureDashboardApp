@@ -17,7 +17,7 @@ def index():
 @app.route("/<requestedStation>")
 def displayDepartures(requestedStation):
     requestedStationsDepartures = retrieveDepartures.query(requestedStation.upper())
-    return render_template("board.html",departures = requestedStationsDepartures, stationTitle = retrieveDepartures.getStation())
+    return render_template("board.html",departures = requestedStationsDepartures, stationTitle = retrieveDepartures.getStation(),length = len)
 
 @app.route('/board',methods = ['POST', 'GET'])
 def result():
