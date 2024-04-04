@@ -118,10 +118,3 @@
     text-align: center;
     padding: 50px;
 }
-.nonScrollingText {
-    overflow: hidden;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    animation: marquee 12s linear infinite;
-  }

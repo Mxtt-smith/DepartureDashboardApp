@@ -32,15 +32,7 @@
                     <div class="expected">
                         {{t.getEta()}}
                     </div>
-                    <div class="callingAt">
-                        Calling at:
-                    </div>
-                    <!-- <div class="textContainer">
-                        <div class="scrollingText">
-                            {{t.getCallingAt()}}
-                        </div>
-                    </div> -->
-                    {% if length(t.getCallingAt()) <= 50 %}
+                    {% if length(t.getCallingAt()) < 40 %}
                         <div class="callingAt">
                             Calling at: {{t.getCallingAt()}}
                         </div>

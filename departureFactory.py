@@ -40,6 +40,8 @@ class getDepartures:
             callingPoints = service.subsequent_calling_points
 
             print(info)
+            for point in callingPoints:
+                print(point.location_name)
 
             departures.append(departure(info,callingPoints))
         
