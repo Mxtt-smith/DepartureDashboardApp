@@ -17,7 +17,8 @@ def index():
 @app.route("/<requestedStation>")
 def displayDepartures(requestedStation):
     requestedStationsDepartures = retrieveDepartures.query(requestedStation.upper())
-    return render_template("board.html",departures = requestedStationsDepartures, stationTitle = retrieveDepartures.getStation(),length = len)
+    session['lengthArg'] = 40 #This is the length of the calling points to be displayed that won't have the scroll effect
+    return render_template("board.html",departures = requestedStationsDepartures, stationTitle = retrieveDepartures.getStation(),length = len, lengthArg = session['lengthArg'])
 
 @app.route('/board',methods = ['POST', 'GET'])
 def result():

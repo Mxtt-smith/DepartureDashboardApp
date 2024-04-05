@@ -32,7 +32,7 @@
                     <div class="expected">
                         {{t.getEta()}}
                     </div>
-                    {% if length(t.getCallingAt()) < 40 %}
+                    {% if length(t.getCallingAt()) < lengthArg %}
                         <div class="callingAt">
                             Calling at: {{t.getCallingAt()}}
                         </div>
