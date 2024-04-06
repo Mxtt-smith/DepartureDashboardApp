@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='main.css') }}">
-
     <title>Dashboard</title>
 </head>
-<body>
+<body onload="sendWindowSize()">
     <div class="selectorForm">
         <h1>Departure Board</h1>
-        <form id="stationSelector" action = "{{ url_for('result') }}" method = "POST">
+        <form id="stationSelector" action="{{ url_for('result') }}" method="POST">
         <label class="stdLabel"for="stationBox">Station:</label><br>
         <input type="text" id="stationBox" name="stationBox" value="KGX"><br>
         <button class="stdButton" type="submit">Search</button>
     </form>
+    <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
+    <script>
+        function sendWindowSize(){
+            width = window.innerWidth;
+            $.ajax({
+                type: "POST",
+                url: "{{ url_for('width') }}",
+                data: {"width": width}
+            })
+        }
+
+    </script>
     <div>
 </body>
 </html>

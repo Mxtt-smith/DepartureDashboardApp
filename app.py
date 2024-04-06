@@ -17,7 +17,7 @@ def index():
 @app.route("/<requestedStation>")
 def displayDepartures(requestedStation):
     requestedStationsDepartures = retrieveDepartures.query(requestedStation.upper())
-    session['lengthArg'] = 40 #This is the length of the calling points to be displayed that won't have the scroll effect
+     #This is the length of the calling points to be displayed that won't have the scroll effect
     return render_template("board.html",departures = requestedStationsDepartures, stationCode = retrieveDepartures.getStation(),length = len, lengthArg = session['lengthArg'],stationTitle = requestedStation.upper())
 
 @app.route('/board',methods = ['POST', 'GET'])
@@ -28,6 +28,7 @@ def result():
         print(json_result)
         requestedStation = escape(json_result.get("stationBox"))
         session["currentStation"] = requestedStation
+        displayDepartures(requestedStation)
         return redirect(f'/{requestedStation}')
 @app.route('/handleOptions',methods=['POST'])
 def handle_options():
@@ -41,3 +42,12 @@ def handle_options():
 @app.errorhandler(404)
 def page_not_found(error):
     return redirect('/XXX')
+@app.route('/width', methods=['POST'])
+def width():
+    if request.method == 'POST':
+        result = request.form
+        json_result = dict(result)
+        print(json_result)
+        session['lengthArg'] = int((json_result.get('width')))
+        return ('', 204)
+        

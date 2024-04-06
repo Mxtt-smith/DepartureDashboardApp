@@ -16,8 +16,9 @@
             <button class="stdButton"  type="submit" value="back" name="opButton">Back</button>
         </form>
     </div>
+    <h1>{{lengthArg}}</h1>
 </head>
-<body>
+<body body onload="sendWindowSize()">
     <div class="board">
         {%for t in departures%}
             {%if t.getDestination() == "ErrorStationNotFound"%}
