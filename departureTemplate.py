@@ -42,7 +42,9 @@ class departure:
             return callingAt
         for i in range(len(self.stations)-1):
             callingAt = callingAt + f'{self.stations[i].location_name}{{{self.stations[i].st}}},' #switch this to an F string matt you idiot
-        return callingAt + self.getDestination() + "{" + self.stations[-1].st + "}      "
+        if len(self.stations) == 0:
+            return callingAt + self.getDestination() + "{" + self.stations[-1].st + "}      "
+        return ""
 
     def getShedDeparture(self):
         return self.scheduledDeparture
