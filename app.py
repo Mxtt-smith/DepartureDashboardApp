@@ -49,5 +49,6 @@ def width():
         json_result = dict(result)
         print(json_result)
         session['lengthArg'] = int((json_result.get('width')))
+        #this needs to be altered
         return ('', 204)
         

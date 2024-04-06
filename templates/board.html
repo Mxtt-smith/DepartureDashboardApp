@@ -16,7 +16,6 @@
             <button class="stdButton"  type="submit" value="back" name="opButton">Back</button>
         </form>
     </div>
-    <h1>{{lengthArg}}</h1>
 </head>
 <body body onload="sendWindowSize()">
     <div class="board">
@@ -37,7 +36,7 @@
                     <div class="expected">
                         {{t.getEta()}}
                     </div>
-                    {% if length(t.getCallingAt()) < lengthArg %}
+                    {% if length(t.getCallingAt()) < 40 %}
                         <div class="callingAt">
                             Calling at: {{t.getCallingAt()}}
                         </div>

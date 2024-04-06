@@ -17,7 +17,7 @@ class getDepartures:
         f.close()
 
     def query(self,stn=""):
-        self.station = self.convertStation(stn) #Will be changed so user can use the actual name of the station
+        self.station = self.convertStation(stn)
         if self.station == "":
             return [departure("ErrorStationNotFound|--|--|--",[])]
     
@@ -32,14 +32,8 @@ class getDepartures:
             service_id = board.train_services[i].service_id
             service = self.darwin.get_service_details(service_id)
 
-            info = ""
-            info += str(board.train_services[i].destination_text) + "|"
-            info += str(service.platform) + "|"
-            info += str(service.eta) + "|"
-            info += str(service.std)
+            info = f'{str(board.train_services[i].destination_text)}|{str(service.platform)}|{str(service.eta)}|{str(service.std)}'
             callingPoints = service.subsequent_calling_points
-
-            print(info)
             for point in callingPoints:
                 print(point.location_name)
 
