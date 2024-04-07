@@ -119,9 +119,15 @@
     padding: 50px;
 }
 .stationTitle{
-    text-align: center;
+    display: inline-block;
 }
 .brLogo{
+    display: inline-block;
+    left: 20%;
+    top:60%;
+}
+.stationName{
+    text-align: center;
     top: 5%;
-    left: 60%;
+    height: 20%;
 }
