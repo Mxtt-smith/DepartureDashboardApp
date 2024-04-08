@@ -63,5 +63,17 @@
         </div>
         
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
+    <script>
+        function sendWindowSize(){
+            width = window.innerWidth;
+            $.ajax({
+                type: "POST",
+                url: "{{ url_for('width') }}",
+                data: {"width": width}
+            })
+        }
+
+    </script>
 </body>
 </html>

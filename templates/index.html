@@ -7,13 +7,15 @@
     <title>Dashboard</title>
 </head>
 <body onload="sendWindowSize()">
+    <div class="searchForm">
+    <h1 class="dashTitle">Departure Board</h1>
     <div class="selectorForm">
-        <h1>Departure Board</h1>
+        
         <form id="stationSelector" action="{{ url_for('result') }}" method="POST">
-        <label class="stdLabel"for="stationBox">Station:</label><br>
-        <input type="text" id="stationBox" name="stationBox" value="KGX"><br>
-        <button class="stdButton" type="submit">Search</button>
-    </form>
+            <label class="stdLabel"for="stationBox">Station:</label><br>
+            <input class="departureInput" type="text" id="stationBox" name="stationBox" value="KGX"><br>
+            <button class="stdButton" type="submit">Search</button>
+        </form>
     <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
     <script>
         function sendWindowSize(){
@@ -26,6 +28,7 @@
         }
 
     </script>
+    <div>
     <div>
 </body>
 </html>

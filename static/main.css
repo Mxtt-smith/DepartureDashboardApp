@@ -13,8 +13,25 @@
     text-align: center;
     margin: 5px;
 }
+.searchForm{
+    text-align: center;
+    top:46%;
+    height: 100%;
+}
+.dashTitle{
+    text-align: center;
+    font-style: monospace;
+}
 .selectorForm .stdLabel{
-    padding: 20px;
+    margin: 5px;
+}
+.departureInput{
+    padding: 5px;
+    fill: grey;
+    margin: 20px;
+}
+.stdLabel{
+    font-size: large;
 }
 .error{
     border-color: red;
