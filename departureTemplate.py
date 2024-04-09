@@ -7,7 +7,6 @@ class departure:
         self.expectedArrival = ""
         self.scheduledArrival = ""
         self.stations = []
-        self.colour = "pink"
 
         if info == "":
             self.destination,self.platform,self.expectedArrival,self.scheduledDeparture = "---"
@@ -38,7 +37,7 @@ class departure:
         callingAt=""
 
         if len(self.stations) == 1:
-            callingAt = callingAt + f'{self.getDestination()}{{self.stations[i].st}} only'
+            callingAt = callingAt + f'{self.getDestination()}{{{self.stations[i].st}}} only'
             return callingAt
         for i in range(len(self.stations)-1):
             callingAt = callingAt + f'{self.stations[i].location_name}{{{self.stations[i].st}}},'
