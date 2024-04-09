@@ -7,35 +7,54 @@
     <title>Test</title>
 </head>
 <body>
-    <div class="baseBoard">
-        <div class="scheduledArrival">
-            00:00
-        </div>
-        <div class="destination">
-            Darlington
-        </div>
-        <div class="platform">
-            1
-        </div>
-        <div class="expected">
-            Exp 00:00
-        </div>
-        <div class="callingAt">
-            Calling at: Durham, Newcastle
-        </div>
-    </div>
+                <div class="baseBoard">
+                    <div class="leftThird">
+                        <div class="scheduledArrival">
+                            00:00
+                        </div>
+                    </div>
+                    <div class="middle">
+                        <div class="destination">
+                            Hitchin
+                        </div>
+                        <div class="callingAt">
+                            Calling at:
+                        </div>
+                        <div class="textContainer">
+                            <div class="scrollingText">
+                                York,Darlington,Bristol,Warrington Central
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightThird">
+                        <div class="platform">
+                            16A
+                        </div>
+                        <div class="expected">
+                            Exp 00:00
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
     <style>
         *{
             font-family: monospace;
-            .baseBoard{
+        }
+.baseBoard{
     position:relative;
     top: 40px;
     font-size: x-large;
-    border: salmon;
     padding: 20px;
     margin: 10px;
+    width: 60%;
     background-color: black;
     height: 30px;
+    left: 20%;
+}
+.middle{
+    left: 150px;
+    right: 150px;
 }
 .baseBoard .scheduledArrival{
     position: absolute;
@@ -47,12 +66,12 @@
     color:rgb(247, 167, 18)
 
 }
-.baseBoard .destination{
+.middle .destination{
     position: absolute;
     top: 5px;
     height: 25px;
     left: 75px;
-    min-width: 63%;
+    width: 100%;
     background-color: grey;
     z-index: 100;
     text-align: left;
@@ -85,19 +104,29 @@
     bottom: 5px;
     height: 25px;
     left: 75px;
-    width : 75%;
+    width : 510px;
     background-color: grey;
     z-index: 100;
     text-align: left;
     color:rgb(247, 167, 18);
     overflow: hidden;
 }
-.callingAt .scrollingText {
+.textContainer{
+    position: absolute;
+    bottom: 5px;
+    height: 25px;
+    left: 200px;
+    width : 360px;
+    z-index: 100;
+    text-align: left;
+    color:rgb(247, 167, 18);
+    overflow: hidden;
+}
+.scrollingText {
     overflow: hidden;
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    width:75%;
     animation: marquee 12s linear infinite;
   }
   
@@ -109,7 +138,6 @@
       transform: translate3d(-50%, 0, 0);
     }
   }
-}       
     </style>
 </body>
 </html>
