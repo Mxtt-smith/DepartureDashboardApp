@@ -18,7 +18,7 @@ def index():
 def displayDepartures(requestedStation):
     requestedStationsDepartures = retrieveDepartures.query(requestedStation.upper())
     session["currentStation"] = retrieveDepartures.convertStation(requestedStation)
-    return render_template("board.html",departures = requestedStationsDepartures, stationCode = retrieveDepartures.getStation(),length = len, lengthArg = session['lengthArg'],stationTitle = requestedStation.upper())
+    return render_template("board.html",departures = requestedStationsDepartures, stationCode = retrieveDepartures.getStation(),length = len, lengthArg = session['lengthArg'],stationTitle = requestedStation.upper(),order = orderConvert, enumerate = enumerate, str = str)
 
 @app.route('/board',methods = ['POST', 'GET'])
 def result():
@@ -54,15 +54,17 @@ def orderConvert(n):
         #Horrendous code i'm sure theres an elegant solution out there
         num = str(n)
         end = ""
-        if len(n) == 1:
+        if len(num) == 1:
             if num == "1":
                 end = "st"
             if num == "2":
-                end = "st"
+                end = "nd"
             if num == "3":
-                end == "st"
+                end = "rd"
             if n > 3:
                 end = "th"
-            return num+end
+            return end
+        elif n == 10 or n == 11 or n == 12 or n == 13:
+            return "th"
         else:
-            return orderConvert(num[-1])
+            return orderConvert(n-10)

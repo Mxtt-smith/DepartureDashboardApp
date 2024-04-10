@@ -23,7 +23,7 @@
 </head>
 <body body onload="sendWindowSize()">
     <div class="board">
-        {%for t in departures%}
+        {%for i,t in enumerate(departures)%}
             {%if t.getDestination() == "ErrorStationNotFound"%}
                 <div class="error">Please enter a valid station name or station code</div>
             {%else%}
@@ -31,7 +31,7 @@
                     <div class="leftThird">
                         <div class="leftThirdSplit"> 
                             <div class="order">
-                            22nd
+                            {{str(i+1) + order(i+1)}}
                             </div>
                             <div class="scheduledArrival">
                                 {{t.getShedDeparture()}}
