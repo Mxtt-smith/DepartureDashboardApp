@@ -35,7 +35,8 @@ def handle_options():
     if request.method == 'POST':
         result = request.form
         json_result = dict(result)
-        if result.get("opButton") == "back":
+        session["currentStation"] = retrieveDepartures.getStation()
+        if result.get("opButton") == "Home":
             return redirect("/")
         else:
             return redirect(f'/{session["currentStation"]}')
