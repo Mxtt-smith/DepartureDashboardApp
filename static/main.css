@@ -48,6 +48,7 @@
     background-color: black;
     height: 52px;
     left: 15%;
+    max-width: 1050px;
 }
 .leftThird{
     width: 100%;
@@ -55,13 +56,15 @@
     height: 100%;
     background-color: black;
     min-width: 105px;
+    max-width: 210px;
 }
 .middle{
     width: 100%;
     flex:60;
     height: 100%;
     background-color: black;
-    min-width: 315;
+    min-width: 315px;
+    max-width: 630px;
 }
 .rightThird{
     width:100%;
@@ -69,6 +72,7 @@
     height: 100%;
     background-color: black;
     min-width: 105px;
+    max-width: 210px;
     text-align: center;
 }
 .leftThird .leftThirdSplit{
