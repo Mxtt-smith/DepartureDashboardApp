@@ -41,7 +41,7 @@ class departure:
             return callingAt
         if len(self.stations) == 0:
             return callingAt + self.getDestination() + "{" + self.stations[-1].st + "}      "
-        for i in range(len(self.stations)-1):
+        for i in range(len(self.stations)):
             callingAt = callingAt + f'{self.stations[i].location_name}{{{self.stations[i].st}}},'
         return callingAt
 
