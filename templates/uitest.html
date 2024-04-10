@@ -9,6 +9,9 @@
 <body>
                 <div class="baseBoard">
                     <div class="leftThird">
+                        <div class="order">
+                            22nd
+                        </div>
                         <div class="scheduledArrival">
                             00:00
                         </div>
@@ -52,32 +55,39 @@
     margin: 10px;
     width: 66%;
     background-color: white;
-    height: 50px;
+    height: 55px;
     left: 15%;
 }
 .leftThird{
     width: 100%;
-    flex:10;
+    flex:20;
     height: 100%;
     background-color: blue;
 }
 .middle{
     width: 100%;
-    flex:72;
+    flex:60;
     height: 100%;
     background-color: green;
 }
 .rightThird{
     width:100%;
-    flex:10;
+    flex:20;
     height: 100%;
     background-color: red;
+}
+.leftThird .order{
+    position: absolute;
+    top: 5px;
+    left: 1%;
+    background-color: grey;
+    z-index: 100;
+    color:rgb(247, 167, 18)
 }
 .leftThird .scheduledArrival{
     position: absolute;
     top: 5px;
-    height: 20px;
-    left: 1%;
+    left: 55px;
     background-color: grey;
     z-index: 100;
     color:rgb(247, 167, 18)
@@ -87,7 +97,7 @@
     position: absolute;
     bottom: 5px;
     height: 20px;
-    left: 75px;
+    left: 1%;
     width : 100%;
     background-color: grey;
     z-index: 100;
