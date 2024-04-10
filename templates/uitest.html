@@ -17,28 +17,19 @@
                                 00:00
                             </div>
                         </div>
-                        <!-- <div class="order">
-                            22nd
-                        </div>
-                        <div class="scheduledArrival">
-                            00:00
-                        </div> -->
                         <div class="callingAt">
                         Calling at:&nbsp;
                         </div>
                     </div>
                     <div class="middle">
-                        <!-- <div class="destination">
+                         <div class="destination">
                             Hitchin
-                        </div>
-                        <div class="callingAt">
-                            Calling at:
                         </div>
                         <div class="textContainer">
                             <div class="scrollingText">
-                                York,Darlington,Bristol,Warrington Central
+                                &nbsp;York,Darlington,Bristol,Warrington Central
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="rightThird">
                         <!-- <div class="platform">
@@ -63,7 +54,7 @@
     margin: 10px;
     width: 66%;
     background-color: white;
-    height: 55px;
+    height: 52px;
     left: 15%;
 }
 .leftThird{
@@ -78,12 +69,14 @@
     flex:60;
     height: 100%;
     background-color: green;
+    min-width: 315;
 }
 .rightThird{
     width:100%;
     flex:20;
     height: 100%;
     background-color: red;
+    min-width: 105px;
 }
 .leftThird .leftThirdSplit{
     display: flex;
@@ -114,7 +107,6 @@
 }
 .leftThird .callingAt{
     bottom: 5px;
-    height: 20px;
     left: 5px;
     width : 100%;
     background-color: grey;
@@ -126,14 +118,14 @@
     min-width: 95px;
 }
 .middle .destination{
-    position: absolute;
     top: 5px;
-    height: 25px;
     width: 100%;
     background-color: grey;
     z-index: 100;
     text-align: left;
-    color:rgb(247, 167, 18)
+    color:rgb(247, 167, 18);
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .rightThird .platform{
     position:absolute;
@@ -158,16 +150,16 @@
     max-width: 109px;
 }
 
-.textContainer{
-    position: absolute;
+.middle .textContainer{
+    height: 18.3px;
     bottom: 5px;
-    height: 25px;
-    left: 200px;
-    width : 360px;
+    width : 100%;
     z-index: 100;
     text-align: left;
     color:rgb(247, 167, 18);
     overflow: hidden;
+    background-color: grey;
+    margin-bottom: 10px;
 }
 .scrollingText {
     overflow: hidden;
