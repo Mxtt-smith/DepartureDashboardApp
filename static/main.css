@@ -39,81 +39,118 @@
     text-align: center;
 }
 .baseBoard{
+    display: flex;
     position:relative;
     top: 40px;
-    font-size: x-large;
-    padding: 20px;
+    font-size:larger;
     margin: 10px;
-    width: 40%;
+    width: 66%;
     background-color: black;
-    height: 30px;
-    left: 30%;
+    height: 52px;
+    left: 15%;
+    max-width: 1050px;
 }
-.baseBoard .scheduledArrival{
-    position: absolute;
-    top: 25px;
-    height: 20px;
-    left: 1%;
+.leftThird{
+    width: 100%;
+    flex:20;
+    height: 100%;
+    background-color: black;
+    min-width: 105px;
+    max-width: 210px;
+}
+.middle{
+    width: 100%;
+    flex:60;
+    height: 100%;
+    background-color: black;
+    min-width: 315px;
+    max-width: 630px;
+}
+.rightThird{
+    width:100%;
+    flex:20;
+    height: 100%;
+    background-color: black;
+    min-width: 105px;
+    max-width: 210px;
+    text-align: center;
+}
+.leftThird .leftThirdSplit{
+    display: flex;
+    top: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.leftThirdSplit .order{
+    top: 5px;
+    width: 100%;
     background-color: grey;
     z-index: 100;
-    color:rgb(247, 167, 18)
+    color:rgb(247, 167, 18);
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.leftThirdSplit .scheduledArrival{
+    border-top: 5px;
+    width: 100%;
+    background-color: grey;
+    z-index: 100;
+    color:rgb(247, 167, 18);
+    margin-bottom: 5px;
+    text-align: center;
 
 }
-.baseBoard .destination{
-    position: absolute;
+.leftThird .callingAt{
+    bottom: 5px;
+    left: 5px;
+    width : 100%;
+    background-color: grey;
+    z-index: 100;
+    text-align: right;
+    color:rgb(247, 167, 18);
+    overflow: hidden;
+    margin-left: 5px;
+    min-width: 95px;
+}
+.middle .destination{
     top: 5px;
-    height: 25px;
-    left: 75px;
-    width: 510px;
+    width: 100%;
     background-color: grey;
     z-index: 100;
     text-align: left;
-    color:rgb(247, 167, 18)
+    color:rgb(247, 167, 18);
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
-.baseBoard .platform{
-    position:absolute;
-    top: 10px;
-    height: 20px;
-    right: 10%;
-    background-color: grey;
-    z-index: 100;
-    color:rgb(247, 167, 18)
-}
-.baseBoard .expected{
-    position: absolute;
-    top: 40px;
-    height: 20px;
-    right: 1%;
-    width: 109px;
+.rightThird .platform{
+    margin-right: 5px;
     background-color: grey;
     z-index: 100;
     color:rgb(247, 167, 18);
-    bottom: 10px;
-    min-width: 109px;
-    max-width: 109px;
+    bottom:5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
-.baseBoard .callingAt{
-    position: absolute;
-    bottom: 5px;
-    height: 25px;
-    left: 75px;
-    width : 510px;
+.rightThird .expected{
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 18.67px;
     background-color: grey;
+    z-index: 100;
+    color:rgb(247, 167, 18);
+}
+
+.middle .textContainer{
+    height: 18.67px;
+    bottom: 5px;
+    width : 100%;
     z-index: 100;
     text-align: left;
     color:rgb(247, 167, 18);
     overflow: hidden;
-}
-.textContainer{
-    position: absolute;
-    bottom: 5px;
-    height: 25px;
-    left: 200px;
-    width : 360px;
-    z-index: 100;
-    text-align: left;
-    color:rgb(247, 167, 18);
-    overflow: hidden;
+    background-color: grey;
+    margin-bottom: 10px;
 }
 .scrollingText {
     overflow: hidden;

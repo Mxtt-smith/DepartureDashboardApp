@@ -7,97 +7,161 @@
     <title>Test</title>
 </head>
 <body>
-    <div class="baseBoard">
-        <div class="scheduledArrival">
-            00:00
-        </div>
-        <div class="destination">
-            Darlington
-        </div>
-        <div class="platform">
-            1
-        </div>
-        <div class="expected">
-            Exp 00:00
-        </div>
-        <div class="callingAt">
-            Calling at: Durham, Newcastle
-        </div>
-    </div>
+                <div class="baseBoard">
+                    <div class="leftThird">
+                        <div class="leftThirdSplit"> 
+                            <div class="order">
+                            22nd
+                            </div>
+                            <div class="scheduledArrival">
+                                00:00
+                            </div>
+                        </div>
+                        <div class="callingAt">
+                        Calling at:&nbsp;
+                        </div>
+                    </div>
+                    <div class="middle">
+                         <div class="destination">
+                            &nbsp;Hitchin
+                        </div>
+                        <div class="textContainer">
+                            <div class="scrollingText">
+                                &nbsp;York,Darlington,Bristol,Warrington Central
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightThird">
+                        <div class="expected">
+                            Exp 00:00
+                        </div>
+                        <div class="platform">
+                            16A
+                        </div>
+                        
+                    </div>
+                 
+                </div>
+            </div>
     <style>
-        *{
-            font-family: monospace;
-            .baseBoard{
+*{
+    font-family: monospace;
+}
+.baseBoard{
+    display: flex;
     position:relative;
     top: 40px;
-    font-size: x-large;
-    border: salmon;
-    padding: 20px;
+    font-size:larger;
     margin: 10px;
+    width: 66%;
     background-color: black;
-    height: 30px;
+    height: 52px;
+    left: 15%;
 }
-.baseBoard .scheduledArrival{
-    position: absolute;
-    top: 25px;
-    height: 20px;
-    left: 1%;
-    background-color: grey;
-    z-index: 100;
-    color:rgb(247, 167, 18)
-
+.leftThird{
+    width: 100%;
+    flex:20;
+    height: 100%;
+    background-color: black;
+    min-width: 105px;
 }
-.baseBoard .destination{
-    position: absolute;
+.middle{
+    width: 100%;
+    flex:60;
+    height: 100%;
+    background-color: black;
+    min-width: 315;
+}
+.rightThird{
+    width:100%;
+    flex:20;
+    height: 100%;
+    background-color: black;
+    min-width: 105px;
+    text-align: center;
+}
+.leftThird .leftThirdSplit{
+    display: flex;
     top: 5px;
-    height: 25px;
-    left: 75px;
-    min-width: 63%;
-    background-color: grey;
-    z-index: 100;
-    text-align: left;
-    color:rgb(247, 167, 18)
+    margin-top: 5px;
+    margin-left: 5px;
 }
-.baseBoard .platform{
-    position:absolute;
-    top: 10px;
-    height: 20px;
-    right: 10%;
-    background-color: grey;
-    z-index: 100;
-    color:rgb(247, 167, 18)
-}
-.baseBoard .expected{
-    position: absolute;
-    top: 40px;
-    height: 20px;
-    right: 1%;
-    width: 109px;
+.leftThirdSplit .order{
+    top: 5px;
+    width: 100%;
     background-color: grey;
     z-index: 100;
     color:rgb(247, 167, 18);
-    bottom: 10px;
-    min-width: 109px;
-    max-width: 109px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
 }
-.baseBoard .callingAt{
-    position: absolute;
-    bottom: 5px;
-    height: 25px;
-    left: 75px;
-    width : 75%;
+.leftThirdSplit .scheduledArrival{
+    border-top: 5px;
+    width: 100%;
     background-color: grey;
+    z-index: 100;
+    color:rgb(247, 167, 18);
+    margin-bottom: 5px;
+    text-align: center;
+
+}
+.leftThird .callingAt{
+    bottom: 5px;
+    left: 5px;
+    width : 100%;
+    background-color: grey;
+    z-index: 100;
+    text-align: right;
+    color:rgb(247, 167, 18);
+    overflow: hidden;
+    margin-left: 5px;
+    min-width: 95px;
+}
+.middle .destination{
+    top: 5px;
+    width: 100%;
+    background-color: grey;
+    z-index: 100;
+    text-align: left;
+    color:rgb(247, 167, 18);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.rightThird .platform{
+    margin-right: 5px;
+    background-color: grey;
+    z-index: 100;
+    color:rgb(247, 167, 18);
+    bottom:5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.rightThird .expected{
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 18.67px;
+    background-color: grey;
+    z-index: 100;
+    color:rgb(247, 167, 18);
+}
+
+.middle .textContainer{
+    height: 18.67px;
+    bottom: 5px;
+    width : 100%;
     z-index: 100;
     text-align: left;
     color:rgb(247, 167, 18);
     overflow: hidden;
+    background-color: grey;
+    margin-bottom: 10px;
 }
-.callingAt .scrollingText {
+.scrollingText {
     overflow: hidden;
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    width:75%;
     animation: marquee 12s linear infinite;
   }
   
@@ -109,7 +173,6 @@
       transform: translate3d(-50%, 0, 0);
     }
   }
-}       
     </style>
 </body>
 </html>
