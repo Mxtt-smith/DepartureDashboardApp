@@ -24,7 +24,7 @@
                             00:00
                         </div> -->
                         <div class="callingAt">
-                            Calling at:
+                        Calling at:&nbsp;
                         </div>
                     </div>
                     <div class="middle">
@@ -71,6 +71,7 @@
     flex:20;
     height: 100%;
     background-color: blue;
+    min-width: 105px;
 }
 .middle{
     width: 100%;
@@ -87,20 +88,28 @@
 .leftThird .leftThirdSplit{
     display: flex;
     top: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 .leftThirdSplit .order{
     top: 5px;
     width: 100%;
     background-color: grey;
     z-index: 100;
-    color:rgb(247, 167, 18)
+    color:rgb(247, 167, 18);
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
 }
 .leftThirdSplit .scheduledArrival{
     border-top: 5px;
     width: 100%;
     background-color: grey;
     z-index: 100;
-    color:rgb(247, 167, 18)
+    color:rgb(247, 167, 18);
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
 
 }
 .leftThird .callingAt{
@@ -110,9 +119,11 @@
     width : 100%;
     background-color: grey;
     z-index: 100;
-    text-align: left;
+    text-align: right;
     color:rgb(247, 167, 18);
     overflow: hidden;
+    margin-left: 5px;
+    min-width: 95px;
 }
 .middle .destination{
     position: absolute;
