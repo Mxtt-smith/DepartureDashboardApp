@@ -17,7 +17,7 @@ def index():
 @app.route("/<requestedStation>")
 def displayDepartures(requestedStation):
     requestedStationsDepartures = retrieveDepartures.query(requestedStation.upper())
-     #This is the length of the calling points to be displayed that won't have the scroll effect
+    session["currentStation"] = retrieveDepartures.convertStation(requestedStation)
     return render_template("board.html",departures = requestedStationsDepartures, stationCode = retrieveDepartures.getStation(),length = len, lengthArg = session['lengthArg'],stationTitle = requestedStation.upper())
 
 @app.route('/board',methods = ['POST', 'GET'])
@@ -48,7 +48,21 @@ def width():
         result = request.form
         json_result = dict(result)
         print(json_result)
-        session['lengthArg'] = int((json_result.get('width')))
-        #this needs to be altered
+        session['lengthArg'] = int((json_result.get('width'))) #this needs to be altered
         return ('', 204)
-        
+def orderConvert(n):  
+        #Horrendous code i'm sure theres an elegant solution out there
+        num = str(n)
+        end = ""
+        if len(n) == 1:
+            if num == "1":
+                end = "st"
+            if num == "2":
+                end = "st"
+            if num == "3":
+                end == "st"
+            if n > 3:
+                end = "th"
+            return num+end
+        else:
+            return orderConvert(num[-1])
