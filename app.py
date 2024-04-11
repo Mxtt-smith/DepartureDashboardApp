@@ -50,7 +50,7 @@ def width():
         result = request.form
         json_result = dict(result)
         print(json_result)
-        session['lengthArg'] = int((json_result.get('width'))) #this needs to be altered
+        session['width'] = float(str(json_result.get('width'))) // 10
         return ('', 204)
 def orderConvert(n):  
         num = str(n)

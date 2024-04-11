@@ -47,7 +47,7 @@
                         <div class="destination">
                             &nbsp;{{t.getDestination()}}
                         </div>
-                        {% if length(t.getCallingAt()) < 40 %}
+                        {% if (length(t.getCallingAt()) <= session.get('width')) %}
                             <div class="textContainer">
                                     &nbsp;{{t.getCallingAt()}}
                             </div>
@@ -80,7 +80,8 @@
     <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
     <script>
         function sendWindowSize(){
-            width = window.innerWidth;
+            elList = document.getElementsByClassName('destination');
+            width = elList[0].clientWidth;
             $.ajax({
                 type: "POST",
                 url: "{{ url_for('width') }}",

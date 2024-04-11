@@ -47,7 +47,7 @@
     width: 66%;
     background-color: black;
     height: 52px;
-    left: 15%;
+    left: 17%;
     max-width: 1050px;
 }
 .leftThird{
@@ -184,4 +184,8 @@
     text-align: center;
     top: 5%;
     height: 20%;
+}
+.test{
+    width:8px;
+    height: auto;
 }
