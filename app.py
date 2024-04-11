@@ -35,6 +35,7 @@ def handle_options():
     if request.method == 'POST':
         result = request.form
         json_result = dict(result)
+        print(json_result)
         session["currentStation"] = retrieveDepartures.getStation()
         if result.get("opButton") == "Home":
             return redirect("/")
@@ -52,20 +53,15 @@ def width():
         session['lengthArg'] = int((json_result.get('width'))) #this needs to be altered
         return ('', 204)
 def orderConvert(n):  
-        #Horrendous code i'm sure theres an elegant solution out there
         num = str(n)
-        end = ""
-        if len(num) == 1:
-            if num == "1":
-                end = "st"
-            if num == "2":
-                end = "nd"
-            if num == "3":
-                end = "rd"
-            if n > 3:
-                end = "th"
-            return end
-        elif n == 10 or n == 11 or n == 12 or n == 13:
-            return "th"
+        if num == "11" or num == "12" or num == "13":
+            return num+"th"
+        if num[-1] == "1":
+            return num+"st"
+        if num[-1] == "2":
+            return num+"nd"
+        if num[-1] == "3":
+            return num+"rd"
         else:
-            return orderConvert(n-10)
+            return num+"th" 
+        
