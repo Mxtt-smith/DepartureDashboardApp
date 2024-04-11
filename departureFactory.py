@@ -10,6 +10,7 @@ load_dotenv(envPath)
 
 class getDepartures:
     stnConversions = {}
+    station = ""
     def __init__(self):
         self.darwin = DarwinLdbSession(wsdl="https://lite.realtime.nationalrail.co.uk/OpenLDBWS/wsdl.aspx", api_key=os.getenv("API_KEY"))
         f = open('Utilities\stationConversionsAPR24.txt')
@@ -19,12 +20,12 @@ class getDepartures:
     def query(self,stn=""):
         self.station = self.convertStation(stn)
         if self.station == "":
-            return [departure("ErrorStationNotFound|--|--|--",[])]
+            return [departure("That station is not found|404|Now|--",[])]
     
         board = self.darwin.get_station_board(self.station)
     
         if len(board.train_services) == 0:
-            return [departure(f'welcome to {self.station}|---|---|---',[])]
+            return [departure('---|---|---|---',[])]
         
         departures = []
         for i in range(len(board.train_services)-1):
