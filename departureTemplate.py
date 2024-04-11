@@ -37,12 +37,12 @@ class departure:
         callingAt=""
 
         if len(self.stations) == 1:
-            callingAt = callingAt + f'{self.getDestination()}{{{self.stations[0].st}}} only'
+            callingAt = callingAt + f'{self.getDestination()}({self.stations[0].st}) only'
             return callingAt
         if len(self.stations) == 0:
             return ""
         for i in range(len(self.stations)):
-            callingAt = callingAt + f'{self.stations[i].location_name}{{{self.stations[i].st}}},'
+            callingAt = callingAt + f'{self.stations[i].location_name}({self.stations[i].st}),'
         return callingAt[0:len(callingAt)-1]
 
     def getShedDeparture(self):
