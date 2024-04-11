@@ -37,7 +37,7 @@ def handle_options():
         json_result = dict(result)
         print(json_result)
         session["currentStation"] = retrieveDepartures.getStation()
-        if result.get("opButton") == "Home":
+        if result.get("button") == "home":
             return redirect("/")
         else:
             return redirect(f'/{session["currentStation"]}')

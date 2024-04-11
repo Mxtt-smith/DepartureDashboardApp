@@ -16,8 +16,8 @@
     <div class="options">
         <form id="optionsForm" action="{{ url_for('handle_options') }}" method="POST">
             <label for="back">Options:</label><br>
-            <button class="stdButton" type="submit" value="refresh" name="opButton">Refresh</button>
-            <button class="stdButton"  type="submit" value="Home" name="opButton">Home</button>
+            <button class="stdButton" onclick="handleOptions('refresh')" value="refresh" name="opButton">Refresh</button>
+            <button class="stdButton"  onclick="handleOptions('home')" value="Home" name="opButton">Home</button>
         </form>
     </div>
 </head>
@@ -83,6 +83,13 @@
                 type: "POST",
                 url: "{{ url_for('width') }}",
                 data: {"width": width}
+            })
+        }
+        function handleOptions(buttonValue){
+            $.ajax({
+                type: "POST",
+                url: "{{ url_for('handle_options') }}",
+                data: {"button": buttonValue}
             })
         }
 
