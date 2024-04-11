@@ -9,10 +9,11 @@ load_dotenv(envPath)
 #This file has one function: To return a list of departure objects reflecting the current services
 
 class getDepartures:
-    stnConversions = {}
-    station = ""
+    
     def __init__(self):
         self.darwin = DarwinLdbSession(wsdl="https://lite.realtime.nationalrail.co.uk/OpenLDBWS/wsdl.aspx", api_key=os.getenv("API_KEY"))
+        self.stnConversions = {}
+        self.station = ""
         f = open('Utilities\stationConversionsAPR24.txt')
         self.stnConversions = json.load(f)
         f.close()
@@ -35,9 +36,6 @@ class getDepartures:
 
             info = f'{str(board.train_services[i].destination_text)}|{str(service.platform)}|{str(service.eta)}|{str(service.std)}'
             callingPoints = service.subsequent_calling_points
-            for point in callingPoints:
-                print(point.location_name)
-
             departures.append(departure(info,callingPoints))
         
         return departures
