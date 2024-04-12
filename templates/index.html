@@ -7,7 +7,8 @@
     <title>Dashboard</title>
 </head>
 <body onload="sendWindowSize()">
-    <h1>UK Train Departure Board</h1>
+    <h1 class="indexTitle">UK Train Departure Board</h1>
+    <div>
     <form id="stationSelector" action="{{ url_for('result') }}" method="POST">
         <div class="baseBoard">
             <div class="leftThird">
@@ -40,18 +41,19 @@
                 
             </div>
     </form>
-        <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
-    <script>
-        function sendWindowSize(){
-            width = window.innerWidth;
-            $.ajax({
-                type: "POST",
-                url: "{{ url_for('width') }}",
-                data: {"width": width}
-            })
-        }
-
-    </script>
-       
+    </div>
+    <h1 class="randomStationTitle">Heres some departures from XXX:</h1>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.2.js"></script>
+<script>
+    function sendWindowSize(){
+        width = window.innerWidth;
+        $.ajax({
+            type: "POST",
+            url: "{{ url_for('width') }}",
+            data: {"width": width}
+        })
+    }
+
+</script>
 </html>

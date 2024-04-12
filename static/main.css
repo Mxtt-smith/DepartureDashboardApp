@@ -236,3 +236,11 @@
     width:8px;
     height: auto;
 }
+.indexTitle{
+    text-align: center;
+}
+.randomStationTitle{
+    text-align: center;
+    position: relative;
+    top: 150px;
+}

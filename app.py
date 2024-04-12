@@ -21,7 +21,8 @@ def index():
 @app.route("/<requestedStation>")
 def displayDepartures(requestedStation):
     requestedStationsDepartures = retrieveDepartures.query(requestedStation.upper())
-    session['currentStation'] = retrieveDepartures.convertStation(requestedStation)
+    #session['currentStation'] = retrieveDepartures.convertStation(requestedStation)
+    session['currentStation'] = requestedStation
     return render_template("board.html",departures = requestedStationsDepartures, stationCode = retrieveDepartures.getStation(),length = len,stationTitle = requestedStation.upper(),order = orderConvert, enumerate = enumerate, str = str)
 
 @app.route('/board',methods = ['POST', 'GET'])
