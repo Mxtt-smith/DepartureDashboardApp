@@ -42,7 +42,59 @@
             </div>
     </form>
     </div>
-    <h1 class="randomStationTitle">Heres some departures from XXX:</h1>
+    <div class="board">
+        <h1 class="randomStationTitle">Heres some departures from XXX:</h1>
+
+        {%for i,t in enumerate(departures)%}
+            {%if t.getDestination() == "ErrorStationNotFound"%}
+                <div class="error">Please enter a valid station name or station code</div>
+            {%else%}
+                <div class="baseBoard">
+                    <div class="leftThird">
+                        <div class="leftThirdSplit"> 
+                            <div class="order">
+                            {{order(i+1)}}
+                            </div>
+                            <div class="scheduledArrival">
+                                {{t.getShedDeparture()}}
+                            </div>
+                        </div>
+                        <div class="callingAt">
+                        Calling at:&nbsp;
+                        </div>
+                    </div>
+                    <div class="middle">
+                        <div class="destination">
+                            &nbsp;{{t.getDestination()}}
+                        </div>
+                        {% if (length(t.getCallingAt()) <= 40) %}
+                            <div class="textContainer">
+                                    &nbsp;{{t.getCallingAt()}}
+                            </div>
+                        {% else%}
+                            <div class="textContainer">
+                                <div class="scrollingText">
+                                    &nbsp;{{t.getCallingAt()}}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="rightThird">
+                        <div class="expected">
+                            {{t.getEta()}}
+                        </div>
+                        <div class="platform">
+                            {{t.getPlatform()}}
+                        </div>
+                        
+                    </div>
+            {%endif%}
+            </div>
+        {%endfor%}
+    </div>
+        <div class="logoImage">
+            <img src="static\NRE_Powered_logo.png" alt="Powered by National Rail Enquiries" >
+        </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
 <script>

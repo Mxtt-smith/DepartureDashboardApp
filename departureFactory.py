@@ -3,6 +3,7 @@ from nredarwin.webservice import DarwinLdbSession
 import os
 from dotenv import find_dotenv, load_dotenv
 import json
+import random
 
 envPath = find_dotenv()
 load_dotenv(envPath)
@@ -48,4 +49,7 @@ class getDepartures:
         if stn in self.stnConversions.values():
             return list(self.stnConversions.keys())[list(self.stnConversions.values()).index(stn)]
         return ""
-
+    def getRandomDepartures(self):
+        key, val = random.choice(list(self.stnConversions.items()))
+        print(key)
+        return self.query(key)

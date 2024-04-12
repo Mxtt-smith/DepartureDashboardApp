@@ -16,7 +16,8 @@ retrieveDepartures = getDepartures()
 
 @app.route("/")
 def index():
-    return render_template("index.html",a_variable = "No station selected")
+    randomDepartures = retrieveDepartures.getRandomDepartures()
+    return render_template("index.html",a_variable = "No station selected",departures = randomDepartures,length = len,order = orderConvert, enumerate = enumerate, str = str)
 
 @app.route("/<requestedStation>")
 def displayDepartures(requestedStation):
