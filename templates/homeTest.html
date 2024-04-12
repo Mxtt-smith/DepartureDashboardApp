@@ -22,9 +22,7 @@
                 </div>
             </div>
             <div class="middle">
-                 <div class="destination">
                     <input class="stationInput" type="text" id="stationBox" name="stationBox" value="KGX"><br>
-                </div>
                 <div class="textContainer">
                     <div class="scrollingText">
                         &nbsp;York,Darlington,Bristol,Warrington Central
@@ -131,18 +129,21 @@
         }
         .middle .stationInput{
             position: relative;
-            height: 12px;
             width: 100%;
-            top: -1px;
             padding: 0px;
-            margin: 0px;
+            height: 18.67px;
             text-align: left;
             color: rgb(247, 167, 18);
             background-color: grey;
             border-color: grey;
-        }
-        .middle .stationInput :active{
-            border-color: aqua;
+            border-radius: 0px;
+            z-index: 100;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            left: 0px;
+            border-top: 0px;
+            border-bottom: 0px;
+            border-left: 0px;
         }
         .rightThird .platform{
             margin-right: 5px;
