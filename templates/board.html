@@ -47,7 +47,7 @@
                         <div class="destination">
                             &nbsp;{{t.getDestination()}}
                         </div>
-                        {% if (length(t.getCallingAt()) <= session.get('width')) %}
+                        {% if (length(t.getCallingAt()) <= 40) %}
                             <div class="textContainer">
                                     &nbsp;{{t.getCallingAt()}}
                             </div>

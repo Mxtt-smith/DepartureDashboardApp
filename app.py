@@ -22,7 +22,7 @@ def index():
 def displayDepartures(requestedStation):
     requestedStationsDepartures = retrieveDepartures.query(requestedStation.upper())
     session['currentStation'] = retrieveDepartures.convertStation(requestedStation)
-    return render_template("board.html",departures = requestedStationsDepartures, stationCode = retrieveDepartures.getStation(),length = len, lengthArg = session['lengthArg'],stationTitle = requestedStation.upper(),order = orderConvert, enumerate = enumerate, str = str)
+    return render_template("board.html",departures = requestedStationsDepartures, stationCode = retrieveDepartures.getStation(),length = len,stationTitle = requestedStation.upper(),order = orderConvert, enumerate = enumerate, str = str)
 
 @app.route('/board',methods = ['POST', 'GET'])
 def result():
