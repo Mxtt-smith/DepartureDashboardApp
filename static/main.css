@@ -123,6 +123,50 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.middle .stationInput{
+    position: relative;
+    width: 100%;
+    padding: 0px;
+    height: 18.67px;
+    text-align: left;
+    color: rgb(247, 167, 18);
+    background-color: grey;
+    border-color: grey;
+    border-radius: 0px;
+    z-index: 100;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+::placeholder{
+    color:rgb(247, 167, 18);
+    font-family: monospace;
+    font-size: larger;
+
+}
+.rightThird .searchButton{
+    position: relative;
+    margin-right: 5px;
+    background-color: grey;
+    z-index: 100;
+    color:rgb(247, 167, 18);
+    bottom:0px;
+    margin-top: 5px;
+    height: 18.67px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    width: 100%;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    right: 5px;
+}
 .rightThird .platform{
     margin-right: 5px;
     background-color: grey;
@@ -153,6 +197,9 @@
     margin-bottom: 10px;
 }
 .scrollingText {
+    position: relative;
+    top: 0px;
+    height: 100%;
     overflow: hidden;
     white-space: nowrap;
     overflow: hidden;

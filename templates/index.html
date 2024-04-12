@@ -7,16 +7,40 @@
     <title>Dashboard</title>
 </head>
 <body onload="sendWindowSize()">
-    <div class="searchForm">
-    <h1 class="dashTitle">Departure Board</h1>
-    <div class="selectorForm">
-        
-        <form id="stationSelector" action="{{ url_for('result') }}" method="POST">
-            <label class="stdLabel"for="stationBox">Station:</label><br>
-            <input class="departureInput" type="text" id="stationBox" name="stationBox" value="KGX"><br>
-            <button class="stdButton" type="submit">Search</button>
-        </form>
-    <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
+    <h1>UK Train Departure Board</h1>
+    <form id="stationSelector" action="{{ url_for('result') }}" method="POST">
+        <div class="baseBoard">
+            <div class="leftThird">
+                <div class="leftThirdSplit"> 
+                    <div class="order">
+                    22nd
+                    </div>
+                    <div class="scheduledArrival">
+                        00:00
+                    </div>
+                </div>
+                <div class="callingAt">
+                Calling at:&nbsp;
+                </div>
+            </div>
+            <div class="middle">
+                    <input class="stationInput" type="text" id="stationBox" name="stationBox" value="" placeholder="Enter a station name or code here"><br>
+                <div class="textContainer">
+                    <div class="scrollingText">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click the button to find out ---&gt;
+                    </div>
+                </div>
+            </div>
+            <div class="rightThird">
+                <div class="expected">
+                    Exp 00:00
+                </div>
+                <button class="searchButton" type="submit">Search</button>
+                
+                
+            </div>
+    </form>
+        <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
     <script>
         function sendWindowSize(){
             width = window.innerWidth;
@@ -28,10 +52,6 @@
         }
 
     </script>
-    <div>
-    <div>
-        <div class="test">
-            H
-        </div>
+       
 </body>
 </html>
