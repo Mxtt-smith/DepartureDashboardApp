@@ -63,7 +63,7 @@
     flex:60;
     height: 100%;
     background-color: black;
-    min-width: 315px;
+    min-width: 330px;
     max-width: 630px;
 }
 .rightThird{
@@ -204,7 +204,7 @@
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    animation: marquee 12s linear infinite;
+    animation: marquee 15s linear infinite;
   }
   
   @keyframes marquee {

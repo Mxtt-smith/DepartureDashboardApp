@@ -19,7 +19,7 @@
             <button class="stdButton"  type="submit" value="home" name="button">Home</button>
         </form>
         <form id="refreshForm" action="{{ url_for('handle_options') }}" method="POST">
-            <button class="stdButton" type="submit" value="{{ session.get('currentStationCode')}}" name="button">Refresh</button>
+            <button class="stdButton" type="submit" value="{{ session.get('currentStation')}}" name="button">Refresh</button>
         </form>
     </div>
 </head>

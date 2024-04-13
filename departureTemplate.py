@@ -43,7 +43,7 @@ class departure:
             return ""
         for i in range(len(self.stations)):
             callingAt = callingAt + f'{self.stations[i].location_name}({self.stations[i].st}),'
-        return callingAt[0:len(callingAt)-1]
+        return "   "+callingAt[0:len(callingAt)-1] + "        "
 
     def getShedDeparture(self):
         return self.scheduledDeparture
