@@ -7,31 +7,104 @@
     <title>Dashboard</title>
 </head>
 <body onload="sendWindowSize()">
-    <div class="searchForm">
-    <h1 class="dashTitle">Departure Board</h1>
-    <div class="selectorForm">
-        
-        <form id="stationSelector" action="{{ url_for('result') }}" method="POST">
-            <label class="stdLabel"for="stationBox">Station:</label><br>
-            <input class="departureInput" type="text" id="stationBox" name="stationBox" value="KGX"><br>
-            <button class="stdButton" type="submit">Search</button>
-        </form>
-    <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
-    <script>
-        function sendWindowSize(){
-            width = window.innerWidth;
-            $.ajax({
-                type: "POST",
-                url: "{{ url_for('width') }}",
-                data: {"width": width}
-            })
-        }
-
-    </script>
+    <h1 class="indexTitle">UK Train Departure Board</h1>
     <div>
-    <div>
-        <div class="test">
-            H
+    <form id="stationSelector" action="{{ url_for('result') }}" method="POST">
+        <div class="baseBoard">
+            <div class="leftThird">
+                <div class="leftThirdSplit"> 
+                    <div class="order">
+                    22nd
+                    </div>
+                    <div class="scheduledArrival">
+                        00:00
+                    </div>
+                </div>
+                <div class="callingAt">
+                Calling at:&nbsp;
+                </div>
+            </div>
+            <div class="middle">
+                    <input class="stationInput" type="text" id="stationBox" name="stationBox" value="" placeholder="Enter a station name or code here"><br>
+                <div class="textContainer">
+                    <div class="scrollingText">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click the button to find out ---&gt;
+                    </div>
+                </div>
+            </div>
+            <div class="rightThird">
+                <div class="expected">
+                    Exp 00:00
+                </div>
+                <button class="searchButton" type="submit">Search</button>
+                
+                
+            </div>
+    </form>
+    </div>
+    <div class="board">
+        <h1 class="randomStationTitle">Heres some departures from {{ session.get('randomStation')}}:</h1>
+        {%for i,t in enumerate(departures)%}
+            {%if t.getDestination() == "ErrorStationNotFound"%}
+                <div class="error">Please enter a valid station name or station code</div>
+            {%else%}
+                <div class="baseBoard">
+                    <div class="leftThird">
+                        <div class="leftThirdSplit"> 
+                            <div class="order">
+                            {{order(i+1)}}
+                            </div>
+                            <div class="scheduledArrival">
+                                {{t.getShedDeparture()}}
+                            </div>
+                        </div>
+                        <div class="callingAt">
+                        Calling at:&nbsp;
+                        </div>
+                    </div>
+                    <div class="middle">
+                        <div class="destination">
+                            &nbsp;{{t.getDestination()}}
+                        </div>
+                        {% if (length(t.getCallingAt()) <= 40) %}
+                            <div class="textContainer">
+                                    &nbsp;{{t.getCallingAt()}}
+                            </div>
+                        {% else%}
+                            <div class="textContainer">
+                                <div class="scrollingText">
+                                    &nbsp;{{t.getCallingAt()}}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="rightThird">
+                        <div class="expected">
+                            {{t.getEta()}}
+                        </div>
+                        <div class="platform">
+                            {{t.getPlatform()}}
+                        </div>
+                        
+                    </div>
+            {%endif%}
+            </div>
+        {%endfor%}
+    </div>
+        <div class="logoImage">
+            <img src="static\NRE_Powered_logo.png" alt="Powered by National Rail Enquiries" >
         </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.2.js"></script>
+<script>
+    function sendWindowSize(){
+        width = window.innerWidth;
+        $.ajax({
+            type: "POST",
+            url: "{{ url_for('width') }}",
+            data: {"width": width}
+        })
+    }
+
+</script>
 </html>
