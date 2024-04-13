@@ -20,7 +20,7 @@ class getDepartures:
         f.close()
 
     def query(self,stn=""):
-        self.station = self.convertStation(stn)
+        self.station = self.convertStationToCode(stn)
         if self.station == "":
             return [departure("That station is not found|404|Now|--",[])]
     
@@ -43,13 +43,15 @@ class getDepartures:
     def getStation(self):
         return self.station
     
-    def convertStation(self,stn):
+    def convertStationToCode(self,stn):
         if stn in self.stnConversions.keys():
             return stn
         if stn in self.stnConversions.values():
             return list(self.stnConversions.keys())[list(self.stnConversions.values()).index(stn)]
         return ""
+    def convertCodeToStation(self, stn):
+        return self.stnConversions.get(self.convertStationToCode(stn))
     def getRandomDepartures(self):
         key, val = random.choice(list(self.stnConversions.items()))
         print(key)
-        return self.query(key)
+        return (val,self.query(key))

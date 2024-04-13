@@ -16,14 +16,15 @@ retrieveDepartures = getDepartures()
 
 @app.route("/")
 def index():
-    randomDepartures = retrieveDepartures.getRandomDepartures()
+    randomStation,randomDepartures = retrieveDepartures.getRandomDepartures()
+    session['randomStation'] = randomStation
     return render_template("index.html",a_variable = "No station selected",departures = randomDepartures,length = len,order = orderConvert, enumerate = enumerate, str = str)
 
 @app.route("/<requestedStation>")
 def displayDepartures(requestedStation):
     requestedStationsDepartures = retrieveDepartures.query(requestedStation.upper())
-    #session['currentStation'] = retrieveDepartures.convertStation(requestedStation)
-    session['currentStation'] = requestedStation
+    session['currentStationCode'] = retrieveDepartures.convertStationToCode(requestedStation)
+    session['currentStation'] = retrieveDepartures.convertCodeToStation(requestedStation)
     return render_template("board.html",departures = requestedStationsDepartures, stationCode = retrieveDepartures.getStation(),length = len,stationTitle = requestedStation.upper(),order = orderConvert, enumerate = enumerate, str = str)
 
 @app.route('/board',methods = ['POST', 'GET'])

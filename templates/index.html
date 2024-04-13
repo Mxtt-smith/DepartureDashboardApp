@@ -43,8 +43,7 @@
     </form>
     </div>
     <div class="board">
-        <h1 class="randomStationTitle">Heres some departures from XXX:</h1>
-
+        <h1 class="randomStationTitle">Heres some departures from {{ session.get('randomStation')}}:</h1>
         {%for i,t in enumerate(departures)%}
             {%if t.getDestination() == "ErrorStationNotFound"%}
                 <div class="error">Please enter a valid station name or station code</div>
