@@ -24,6 +24,38 @@
     </div>
 </head>
 <body body onload="sendWindowSize()">
+    <div class="options">
+        <form id="stationSelector" action="{{ url_for('handle_options') }}" method="POST">
+            <div class="baseBoard">
+                <div class="leftThird">
+                    <div class="leftThirdSplit"> 
+                        <div class="order">
+                        22nd
+                        </div>
+                        <div class="scheduledArrival">
+                            00:00
+                        </div>
+                    </div>
+                    <div class="callingAt">
+                    Calling at:&nbsp;
+                    </div>
+                </div>
+                <div class="middle">
+                       <div class="destination"></div>
+                    <div class="textContainer">
+                        <div class="scrollingText">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click the button to find out ---&gt;
+                        </div>
+                    </div>
+                </div>
+                <div class="rightThird">
+                    <div class="expected">
+                        Exp 00:00
+                    </div>
+                    <button class="searchButton" type="submit" value="{{ session.get('currentStation')}}" name="button">Refresh</button>
+                </div>
+        </form>
+    </div>
     <div class="board">
         {%for i,t in enumerate(departures)%}
             {%if t.getDestination() == "ErrorStationNotFound"%}
