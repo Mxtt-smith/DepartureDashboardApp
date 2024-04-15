@@ -7,45 +7,81 @@
     <title>Test</title>
 </head>
 <body>
-                <div class="baseBoard">
-                    <div class="leftThird">
-                        <div class="leftThirdSplit"> 
-                            <div class="order">
-                            22nd
-                            </div>
-                            <div class="scheduledArrival">
-                                00:00
-                            </div>
+    <div class="options">
+        <form id="stationSelector" action="{{ url_for('handle_options') }}" method="POST">
+            <div class="baseBoard">
+                <div class="leftThird">
+                    <div class="leftThirdSplit"> 
+                        <div class="order">
+                        22nd
                         </div>
-                        <div class="callingAt">
-                        Calling at:&nbsp;
+                        <div class="scheduledArrival">
+                            00:00
                         </div>
                     </div>
-                    <div class="middle">
-                         <div class="destination">
-                            &nbsp;Hitchin
-                        </div>
-                        <div class="textContainer">
-                            <div class="scrollingText">
-                                &nbsp;York,Darlington,Bristol,Warrington Central
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rightThird">
-                        <div class="expected">
-                            Exp 00:00
-                        </div>
-                        <div class="platform">
-                            16A
-                        </div>
-                        
-                    </div>
-                 
+                    <button class="homeButton" type="submit" value="Home" name="button">Home</button>
                 </div>
-            </div>
+                <div class="middle">
+                       <div class="destination">
+                            Welcome to blah blah blah
+                       </div>
+                    <div class="textContainer">
+                        <div class="scrollingText">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click the button to find out ---&gt;
+                        </div>
+                    </div>
+                </div>
+                <div class="rightThird">
+                    <div class="expected">
+                        Exp 00:00
+                    </div>
+                    <button class="searchButton" type="submit" value="{{ session.get('currentStation')}}" name="button">Refresh</button>
+                </div>
+        </form>
+    </div>
     <style>
 *{
     font-family: monospace;
+}
+.leftThird .homeButton{
+    position: relative;
+    left: 5px;
+    width : 100%;
+    height: 18.67px;
+    margin-top: 5px;
+    text-align: center;
+    background-color: grey;
+    z-index: 100;
+    color:rgb(247, 167, 18);
+    overflow: hidden;
+    width: 100%;
+    min-width: 95px;
+    margin-bottom: 5px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    bottom:5px;
+}
+.rightThird .searchButton{
+    position: relative;
+    margin-right: 5px;
+    background-color: grey;
+    z-index: 100;
+    color:rgb(247, 167, 18);
+    bottom:0px;
+    margin-top: 5px;
+    height: 18.67px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    width: 100%;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    right: 5px;
 }
 .baseBoard{
     display: flex;
