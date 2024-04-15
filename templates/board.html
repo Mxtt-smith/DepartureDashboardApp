@@ -12,16 +12,6 @@
         </div>
     </div>
     
-        
-    <div class="options">
-        <form id="homeForm" action="{{ url_for('handle_options') }}" method="POST">
-            <label for="back">Options:</label><br>
-            <button class="stdButton"  type="submit" value="home" name="button">Home</button>
-        </form>
-        <form id="refreshForm" action="{{ url_for('handle_options') }}" method="POST">
-            <button class="stdButton" type="submit" value="{{ session.get('currentStation')}}" name="button">Refresh</button>
-        </form>
-    </div>
 </head>
 <body body onload="sendWindowSize()">
     <div class="options">
@@ -36,12 +26,12 @@
                             00:00
                         </div>
                     </div>
-                    <div class="callingAt">
-                    Calling at:&nbsp;
-                    </div>
+                    <button class="homeButton" type="submit" value="home" name="button">Home</button>
                 </div>
                 <div class="middle">
-                       <div class="destination"></div>
+                       <div class="destination">
+                            &nbsp;Options
+                       </div>
                     <div class="textContainer">
                         <div class="scrollingText">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click the button to find out ---&gt;
