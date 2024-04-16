@@ -6,6 +6,7 @@ Index displays a form in the style of a departure board and displays departures 
 Once they have entered the station they want and pressed the search button this what they then see:
 ![alt text](board.png)
 Again the options menu is in the style of a departure board, the user can either refresh the page or return to the home page.
+CallingAt section scrolls like real a real life departure board if the text is over a certain length
 
 
 ![alt text](url.png)
@@ -13,3 +14,4 @@ Again the options menu is in the style of a departure board, the user can either
 
 
 The user can also load whatever station they want from the url with the name or code for a station.
+Do plan to host this on a cloud service very soon.
