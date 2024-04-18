@@ -1,7 +1,6 @@
 from flask import Flask, render_template, redirect,request, session
 from flask_session import Session
-from departureTemplate import departure #Custom departure object
-from departureFactory import getDepartures
+from departureClasses import getDepartures,departure
 from markupsafe import escape 
 from datetime import datetime
 
