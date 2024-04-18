@@ -3,6 +3,7 @@ from flask_session import Session
 from departureTemplate import departure #Custom departure object
 from departureFactory import getDepartures
 from markupsafe import escape 
+from datetime import datetime
 
 #Command to run the app is: python -m flask --app app --debug run
 #Activating virtual environment departureDash\scripts\activate
@@ -16,9 +17,11 @@ retrieveDepartures = getDepartures()
 
 @app.route("/")
 def index():
+    now = datetime.now()
+    current_time = now.strftime("%H:%M")
     randomStation,randomDepartures = retrieveDepartures.getRandomDepartures()
     session['randomStation'] = randomStation
-    return render_template("index.html",a_variable = "No station selected",departures = randomDepartures,length = len,order = orderConvert, enumerate = enumerate, str = str)
+    return render_template("index.html",a_variable = "No station selected",departures = randomDepartures,length = len,order = orderConvert, enumerate = enumerate, str = str, time = current_time)
 
 @app.route("/<requestedStation>")
 def displayDepartures(requestedStation):

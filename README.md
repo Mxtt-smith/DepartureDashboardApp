@@ -1,7 +1,8 @@
 # departureDashboard 
 Web app that queries the national rail enquiries API to display departures from the Users' chosen station.
 The user can either input station code or name as the backend converts the users' input to the code in order to query the API.
-![alt text](index.png)
+![alt text](index1.png)
+![alt text](image.png)
 Index displays a form in the style of a departure board and displays departures from a random uk station.
 Once they have entered the station they want and pressed the search button this what they then see:
 ![alt text](board.png)
