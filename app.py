@@ -18,7 +18,11 @@ retrieveDepartures = getDepartures()
 def index():
     now = datetime.now()
     current_time = now.strftime("%H:%M")
-    randomStation,randomDepartures = retrieveDepartures.getRandomDepartures()
+    #If the API call for the randomly selected station fails we'll simply try it again by redirecting to the index route again
+    try:
+        randomStation,randomDepartures = retrieveDepartures.getRandomDepartures()
+    except:
+        return redirect('/')
     session['randomStation'] = randomStation
     return render_template("index.html",a_variable = "No station selected",departures = randomDepartures,length = len,order = orderConvert, enumerate = enumerate, str = str, time = current_time)
 

@@ -42,7 +42,7 @@
                     <div class="expected">
                         ---
                     </div>
-                    <button class="searchButton" type="submit" value="{{ session.get('currentStation')}}" name="button">Refresh</button>
+                    <button class="searchButton"  value="{{ session.get('currentStation')}}" name="button"><a href="/{{stationTitle}}" class="refreshLink">Refresh</a></button>
                 </div>
         </form>
     </div>

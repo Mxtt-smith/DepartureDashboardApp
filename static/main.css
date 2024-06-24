@@ -261,3 +261,7 @@
     position: relative;
     padding: 30px;
 }
+.refreshLink{
+    text-decoration: none;
+    color:rgb(247, 167, 18);
+}
