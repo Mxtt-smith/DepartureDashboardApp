@@ -28,6 +28,7 @@ def index():
 
 @app.route("/<requestedStation>")
 def displayDepartures(requestedStation):
+    requestedStation = escape(requestedStation)
     requestedStationsDepartures = retrieveDepartures.query(requestedStation.upper())
     session['currentStationCode'] = retrieveDepartures.convertStationToCode(requestedStation)
     session['currentStation'] = retrieveDepartures.convertCodeToStation(requestedStation)
